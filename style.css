@@ -1,0 +1,210 @@
+/* Resetting margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Background dan font */
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f7f7f7; /* Warna pastel lembut */
+    color: #555; /* Warna teks gelap lembut */
+    overflow-x: hidden;
+  }
+  
+  /* Header */
+  header {
+    background-color: #fcd0d0; /* Soft pastel pink */
+    padding: 80px 0;
+    text-align: center;
+    border-bottom: 5px solid #f8c4c4; /* Peachy border */
+    position: relative;
+  }
+  
+  header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5rem;
+    color: #f28a8a; /* Warna coral untuk judul */
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  header h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5rem;
+    color: #6a6a6a;
+    animation: fadeIn 3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Animasi bunga tulip yang lucu */
+  @keyframes bloom {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .tulip-animation {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bloom 4s infinite ease-in-out;
+  }
+  
+  .tulip-animation img {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .tulip-animation img:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Tentang Saya */
+  .about {
+    padding: 50px 20px;
+    text-align: center;
+    background-image: url('https://png.pngtree.com/background/20210711/original/pngtree-beautiful-hand-painted-tulip-tissue-poster-background-template-picture-image_1098763.jpg'); /* Ganti dengan URL gambar */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Gambar tidak akan diulang */
+    height: 100vh; /* Tinggi bagian tentang sesuai dengan ukuran layar */
+    color: white; /* Teks putih untuk kontras dengan background */
+  }
+  
+  .about h2 {
+    font-family: 'Pacifico', cursive;
+    color: #f28a8a;
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    font-size: 1.1rem;
+    color: #777;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify;
+  }
+  
+  /* Galeri Bunga Tulip */
+  .gallery {
+    display: flex;
+    overflow-x: auto; /* Mengaktifkan scroll horizontal */
+    gap: 30px;
+    padding: 20px;
+    white-space: nowrap; /* Mencegah gambar pindah baris */
+    background-color: #f1f7f6;
+  }
+  
+  .gallery img {
+    max-width: 150px;
+    height: auto; /* Menjaga aspek rasio gambar */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Mengatur agar gambar tetap proporsional */
+    cursor: pointer;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+   
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 50px;
+  }
+
+  .modal-content {
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .modal-image {
+    max-width: 300px;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .description {
+    padding-left: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 1.1em;
+    color: #333;
+    max-width: 400px;
+  }
+
+ /* Tombol tutup */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+  .close:hover {
+    color: #bbb;
+}
+
+  /* Footer */
+  footer {
+    background-color: #fcd0d0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: #f28a8a;
+    font-size: 1.2rem;
+    margin: 10px;
+  }
+  
+  footer a:hover {
+    color: #f8c4c4; /* Highlight saat hover */
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+  
